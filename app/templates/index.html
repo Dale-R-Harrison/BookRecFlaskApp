@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Hello, {{current_user.username}}!</h1>
+  <p>
+  Please rate the book shown below to be given recommendations!<br />
+  You will be able to see recommendations on your profile page.
+  </p>
+  <hr>
+  <table>
+    <tr valign="center" halign='center'>
+      <td><h2>Title: ""{{ book.title }}""</h2></td>
+    </tr>
+    <tr valign="center" halign='center'>
+      <td><h3>Author: {{ book.author }}</h3></td>
+    </tr>
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <tr valign='top', halign='left'>
+        <td><em>{{ form.review.label }}</em></td>
+      </tr>
+      <tr valign='top', halign='left'>
+        <td>{{ form.review }}</td>
+        {% for error in form.review.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </tr>
+      <tr valign='top', halign='left'>
+        <td>{{ form.submit() }}</td>
+      </tr>
+    </form>
+  </table>
+  <hr>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Data Dashboard</h1>
+<h2>App Data</h2>
+<table>
+  <tr><h3>Top Users by Books Reviewed:</h3></tr>
+  {% for user in users %}
+  <tr>
+    <td>{{ user.username }}: {{ user.reviewed.all() | count }} books reviewed.</td>
+  </tr>
+  {% endfor %}
+</table>
+<table>
+  <tr><h3>Most Reviewed Books:</h3></tr>
+  <tr><img src="{{ url_for('fig') }}" alt="bargraph", width=700></tr>
+</table>
+<hr>
+<h2>Dataset Data</h2>
+<img src='/img/booksplot.png' alt="scatterplot">
+{% endblock %}

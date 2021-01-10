@@ -1,0 +1,12 @@
+
+# Ignore the database migrations file created by SQLAlchemy
+migrations/
+
+# Ignore virtual environment
+venv/
+
+# ignore google cloud files
+.gcloudignore
+
+# ignore all pycache directories
+**/__pycache__

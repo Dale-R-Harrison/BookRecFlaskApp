@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <table>
+    <tr valign="top">
+      <td><img src="{{ user.avatar(128) }}"></td>
+      <td>
+      <table>
+        <tr valign="top">
+          <td><h1>User: {{ user.username }}</h1></td>
+        </tr>
+        <tr valign="top">
+          <td><p>Number of books reviewed: {{ user.reviewed.count() }}
+        </tr>
+      </table>
+      </td>
+    </tr>
+  </table>
+  <hr>
+  <h2>Recommended Books:</h2>
+  <table>
+    {% for book in reclist %}
+    <tr valign="top">
+      <td><p>"{{ book.title }}" by {{ book.author }}</p></td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
