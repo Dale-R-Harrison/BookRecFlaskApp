@@ -1,0 +1,22 @@
+body {
+  background-color: #e5dfdf;
+  margin: 0;
+}
+
+hr {
+  border-style: none;
+}
+
+.header {
+  background-color: #1d4d4f;
+  color: #e5dfdf;
+  padding: 25px 0;
+}
+
+.header-link {
+  color: #e5dfdf;
+}
+
+.header-link:visited {
+  color: #e5dfdf;
+}

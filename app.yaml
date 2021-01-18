@@ -3,5 +3,5 @@ entrypoint: gunicorn -b :$PORT main:app --timeout 0
 instance_class: F4_HIGHMEM
 
 handlers:
-- url: /img
-  static_dir: img
+- url: /static
+  static_dir: static

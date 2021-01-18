@@ -5,16 +5,17 @@
     {% else %}
     <title> Welcome to Dale's App </title>
     {% endif %}
+    <link rel="stylesheet" href="/static/main.css">
   </head>
   <body>
-    <div>Dale's App:
-      <a href={{ url_for('index') }}>Home</a>
+    <div class="header">Dale's App:
+      <a class="header-link" href={{ url_for('index') }}>Home</a>
       {% if current_user.is_anonymous %}
-      <a href={{ url_for('login') }}>Log In</a>
+      <a class="header-link" href={{ url_for('login') }}>Log In</a>
       {% else %}
-      <a href={{ url_for('user', username=current_user.username) }}>Profile</a>
-      <a href='/dash'>Dashboard</a>
-      <a href={{ url_for('logout') }}>Log Out</a>
+      <a class="header-link" href={{ url_for('user', username=current_user.username) }}>Profile</a>
+      <a class="header-link" href='/dash'>Dashboard</a>
+      <a class="header-link" href={{ url_for('logout') }}>Log Out</a>
       {% endif %}
     </div>
     <hr>
@@ -27,6 +28,8 @@
     </ul>
     {% endif %}
     {% endwith %}
-    {% block content %}{% endblock %}
+    <div class="main-div">
+      {% block content %}{% endblock %}
+    </div>
   </body>
 </html>
